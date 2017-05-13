@@ -1,5 +1,7 @@
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{ item | json }}
+<ul class="collapsible" data-collapsible="accordion">
+  <li *ngFor="let item of items | async">
+    <div class="collapsible-header"><span class="new badge">{{item.titulo}}</span
+    ><i class="material-icons">filter_drama</i>{{item.palestrante}}</div>
+    <div class="collapsible-body"><p>{{item.descricao}}</p></div>
   </li>
 </ul>
