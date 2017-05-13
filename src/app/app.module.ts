@@ -10,10 +10,12 @@ import { environment } from '../environments/environment';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
+import { SpeakerFilterPipe } from './speaker-filter.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SpeakerFilterPipe
   ],
   imports: [
     BrowserModule,
