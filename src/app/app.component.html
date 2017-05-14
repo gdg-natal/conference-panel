@@ -1,15 +1,79 @@
-<ul class="collapsible" data-collapsible="accordion">
-  <li class="collection-item avatar"  *ngFor="let item of items | async | speakerFilter">
-      <div class="collapsible-header">
-        <img src={{item.foto}} width="80px" height="80px" alt="" class="circle">
-        <span class="new badge">{{item.titulo}}</span>
-        <i class="material-icons">{{item.atual ? "filter_drama" : "grade"}}</i>
-        {{item.palestrante}}
-      </div>
-      <div class="collapsible-body">
-        <p>{{item.descricao}}</p>
-        <p>Início {{item.inicio}}</p>
-        <p>Fim {{item.fim}}</p>
+<header>
+  <div class="greet">
+    <img src="/assets/gdgnatal.svg" alt="GDG Natal">
+    <div class="texts">
+      <span class="welcome">Seja Bem Vind@</span>
+      <span class="eventName">Google I/O Extended Natal</span>
     </div>
-  </li>
-</ul>
+  </div>
+  <div class="clock">
+    <span>{{clock}}</span>
+  </div>
+</header>
+<section class="body">
+  <div class="lectures">
+    <div class="currentLecture" *ngIf="current">
+      <div class="lecturer-picture active big" [ngStyle]="{ 'background-image': 'url(' + current.photo + ')' }"></div>
+      <div class="info">
+        <span class="name"> {{current.speaker}} </span>
+        <span class="title"> {{current.title}} </span>
+      </div>
+    </div>
+    <div class="timeline">
+      <div #scrollElement class="scroll">
+        <div *ngIf="current">
+          <div *ngFor="let item of schedule; let last = last;"
+               class="lecturer"
+               [ngClass]="{ 'notLast': !last }">
+            <div class="lecturer-picture"
+                 [ngClass]="{ 'active': item.current }"
+                 [ngStyle]="{ 'background-image': 'url(' + item.photo + ')' }"></div>
+            <span class="name">{{item.speaker}}</span>
+            <span class="title">{{item.title}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="social">
+    <div class="hashtag">
+      <h4>#ioNatal2017</h4>
+      <p><small>Compartilhe nas redes sociais</small></p>
+    </div>
+    <div class="scroll">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="http://lorempixel.com/300/300">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title</span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="http://lorempixel.com/300/300">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title</span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="http://lorempixel.com/300/300">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">Card Title</span>
+          <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+{{item.foto}}
+{{item.titulo}}
+{{item.palestrante}}
+item.atual
+-->

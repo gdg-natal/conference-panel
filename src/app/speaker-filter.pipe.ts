@@ -6,10 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SpeakerFilterPipe implements PipeTransform {
 
   transform(events: any, args?: any): any {
-    if(events == null){
+    if (events == null) {
       return null;
     }
-    return events.filter( event => event.titulo != undefined );
+    return events.filter( event => event.ignore !== undefined );
   }
 
 }

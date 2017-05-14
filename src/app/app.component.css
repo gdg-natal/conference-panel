@@ -1,0 +1,179 @@
+header {
+  width: 100%;
+  height: 120px;
+  background-color: rgba(0, 0, 0, .4);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+header .greet {
+  order: 1;
+}
+
+header .greet img{
+  width: 130px;
+  padding: 18px 0;
+  display: inline-block;
+}
+
+header .greet .texts {
+  display: inline-block;
+  height: 120px;
+  vertical-align: top;
+  padding: 29px 20px;
+}
+
+header .greet .texts span {
+  display: block;
+  color: #fff;
+  font-size: 2em;
+  line-height: 1em;
+}
+
+header .clock {
+  order: 2;
+}
+
+header .clock span {
+  font-size: 4em;
+  font-weight: bold;
+  color: #fff;
+  line-height: 120px;
+  padding: 0 80px;
+}
+
+section.body {
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.lectures {
+  width: 78%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.currentLecture {
+  padding: 60px;
+}
+
+.currentLecture .lecturer-picture {
+  display: inline-block;
+}
+.currentLecture .info {
+  display: inline-block;
+  vertical-align: top;
+  padding: 60px 30px;
+}
+
+.currentLecture .info span{
+  display: block;
+  color: #fff;
+  line-height: 1em;
+}
+
+.currentLecture .info span.name {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.currentLecture .info span.title {
+  font-size: 1.5em;
+  font-weight: 200;
+}
+
+.timeline {
+  padding: 0 60px;
+  color: #fff;
+  overflow-x: auto;
+}
+
+.timeline .lecturer{
+  display: inline-block;
+  width: 219px;
+  position: relative;
+  padding-right: 50px;
+  vertical-align: top;
+  text-align: center;
+}
+
+.timeline .lecturer.notLast::before {
+  content: '';
+  width: 162px;
+  height: 10px;
+  background: #fff;
+  position: absolute;
+  right: -11px;
+  top: 33px;
+}
+
+.timeline .lecturer span {
+  margin-left: -50px;
+  display: block;
+  width: 170px;
+}
+
+.timeline .lecturer .name {
+  font-weight: bold;
+}
+
+.social {
+  width: 17%;
+  display: inline-block;
+  vertical-align: top;
+  height: calc(100vh - 100px);
+  margin: 0 30px;
+  padding-top: 20px;
+}
+
+.social .hashtag {
+  color: #fff;
+}
+
+.social .scroll {
+  overflow-y: auto;
+  height: calc(100vh - 210px);
+}
+
+.social h4, .social p {
+  margin: 0;
+}
+
+.lecturer-picture {
+  width: 75px;
+  height: 75px;
+  background-size: cover;
+  position: relative;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: #c1c1c1;
+}
+.lecturer-picture::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: #9E9E9E;
+}
+.lecturer-picture.active::before {
+  background-color: #4CAF50;
+}
+
+.lecturer-picture.big {
+  width: 200px;
+  height: 200px;
+}
+
+.lecturer-picture.big::before {
+  top: 0px;
+  right: 17px;
+  width: 35px;
+  height: 35px;
+}
